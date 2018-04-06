@@ -66,11 +66,11 @@ We have trained and tested on VGG16 and Resnet-101 model as well.
 a)version 1.13—>index not an int
 b)downgraded it to 1.11 —>unable to import multi array.
 Solution :
-Yes, the ability to use floating point indices was deprecated for a bit; It was finally removed in 1.12. You can also fix the problem by modifying lib/roi_data_layer/minibatch.py
+ You can also fix the problem by modifying lib/roi_data_layer/minibatch.py
 
 On line 26, there's a call to np.round
 fg_rois_per_image = np.round(cfg.TRAIN.FG_FRACTION * rois_per_image)
-This, unfortunately, creates a float, which causes the issues. Chaning this line to
+This, unfortunately, creates a float, which causes the issues. Changing this line to
 fg_rois_per_image = np.round(cfg.TRAIN.FG_FRACTION * rois_per_image).astype(np.int)
 will fix this without having to use an older version of numpy, since fg_rois_per_image is where the floats were creeping in and causing trouble.
 
@@ -129,6 +129,6 @@ def vis_detections(ax, class_name , dets, thresh=0.5):
     i hope this works for you !
     
     
-
+(3)This tools/demo.py works for the multitiff file processing.
 
 
