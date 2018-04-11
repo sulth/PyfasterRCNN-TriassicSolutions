@@ -27,7 +27,7 @@ To train this faster rcnn model on a new dataset, follow the instructions below.
 
 #### Step 1: Setup Faster-RCNN:
 
-follow https://gist.github.com/vaibhawchandel/f829f5b8aff9b55a6473ccaf5f8db4bd for the installation insructions.
+follow https://gist.github.com/vaibhawchandel/f829f5b8aff9b55a6473ccaf5f8db4bd for the installation instructions.
 
 #### Step 2: Download models and run a demo
 
